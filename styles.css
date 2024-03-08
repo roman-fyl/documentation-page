@@ -1,0 +1,308 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  bottom: 0;
+  font-family: Roboto, sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+html,
+body {
+  overscroll-behavior: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.aside {
+  min-width: 21vw;
+  background-color: #D64200;
+  display: flex;
+  flex-direction: column;
+  text-wrap: nowrap;
+  flex: 0 0 auto;
+  overscroll-behavior: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.logo {
+  padding: 12px;
+  display: block;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+#show-menu:checked~.menu__items {
+  display: flex;
+  flex-direction: column;
+}
+
+
+#show-menu:checked~#show-arrow {
+  display: none;
+}
+
+#hide-menu:checked~#hide-arrow {
+  display: none;
+}
+
+.arrow {
+  padding: 5px 10px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  display: none;
+  float: right;
+}
+
+.aside__menu h2 {
+  font: 700 22px/40px "Roboto, sans-serif";
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0 12px;
+  flex: 1 1 auto;
+}
+
+.menu__items {
+  list-style: none;
+  padding: 0;
+}
+
+.menu__items li {
+  font: 600 14px/25px "Roboto, sans-serif";
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #fff;
+  text-transform: capitalize;
+  padding: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu__items li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu__items li a div {
+  padding: 10px;
+}
+
+.aside li {
+  width: 100%;
+  border-top: 1px solid white;
+  transition: background .2s ease;
+}
+
+.aside li:hover {
+  filter: blur(.5);
+  background: rgba(255, 182, 159, 0.3);
+  cursor: pointer;
+}
+
+.main {
+  padding: 50px 0;
+  max-width: 69vw;
+  flex: 1 1 auto;
+  position: relative;
+  left: 27vw;
+  right: 0;
+  overflow-x: hidden;
+}
+
+.element__body {
+  margin: 10px 0;
+}
+
+.element__body h3 {
+  font: 700 19px/35px "Roboto, sans-serif";
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.element__body p {
+  font: 400 19px/33px "Roboto, sans-serif";
+  letter-spacing: 0.02em;
+  text-align: justify;
+}
+
+.element__body li {
+  font: 400 19px/33px "Roboto, sans-serif";
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.description__list li {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.focus__part {
+  font-family: Roboto, sans-serif;
+  background: rgba(200, 196, 197, 1);
+  padding: 20px;
+  width: 100%;
+  display: block;
+}
+
+
+.highlight {
+  background: rgba(200, 196, 197, 1);
+  padding: 4px;
+}
+
+
+@media (min-width: 951px) and (max-width: 1144px) {
+  .main {
+    max-width: 64vw;
+    left: 32vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 950px) {
+  .main {
+    max-width: 59vw;
+    left: 38vw;
+  }
+
+}
+
+
+@media (min-width: 425px) and (max-width: 767px) {
+  .wrapper {
+    display: block;
+  }
+
+  .main {
+    max-width: 100%;
+    left: 0;
+    padding: 30px 20px;
+  }
+
+  .aside {
+    width: 100%;
+    flex-direction: column-reverse;
+    position: relative;
+    z-index: 2;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .aside__menu h2 {
+    padding: 12px 12px;
+  }
+
+  #show-menu:checked~.menu__items {
+    display: block;
+    transition: display .2s ease;
+  }
+
+  #hide-menu:checked~.menu__items {
+    display: none;
+    transition: display .2s ease;
+  }
+
+  .arrow {
+    display: inline-block;
+  }
+
+}
+
+@media (min-width: 320px) and (max-width: 424px) {
+  .wrapper {
+    display: block;
+  }
+
+  .aside {
+    width: 100%;
+    flex-direction: column-reverse;
+    position: relative;
+    z-index: 2;
+  }
+
+  .aside__menu {
+    flex-direction: column;
+  }
+
+  .logo {
+    margin-left: auto;
+    display: none;
+  }
+
+  .aside__menu h2 {
+    padding: 12px 12px;
+  }
+
+  .main {
+    max-width: 100%;
+    padding: 20px;
+    left: 0;
+    z-index: 1;
+  }
+
+  .focus__part {
+    padding: 20px 1px;
+  }
+
+  #show-menu:checked~.menu__items {
+    display: block;
+  }
+
+  #hide-menu:checked~.menu__items {
+    display: none;
+    transition: display .2s ease;
+  }
+
+  .arrow {
+    display: inline-block;
+  }
+
+}
